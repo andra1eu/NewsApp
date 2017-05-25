@@ -23,16 +23,15 @@ public class NewsAdapter extends ArrayAdapter<News> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.news_list_item, parent, false);
-
-            News currentNews = getItem(position);
-
-            TextView title = (TextView) convertView.findViewById(R.id.title);
-            TextView section = (TextView) convertView.findViewById(R.id.description);
-            title.setText(currentNews.getTitle());
-            section.setText(currentNews.getDescription());
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.news_list_item, parent, false);
         }
+
+        News currentNews = getItem(position);
+        TextView title = (TextView) convertView.findViewById(R.id.title);
+        TextView section = (TextView) convertView.findViewById(R.id.description);
+        title.setText(currentNews.getTitle());
+        section.setText(currentNews.getDescription());
+
         return convertView;
     }
 
